@@ -21,6 +21,7 @@ VQE uses parameterized quantum circuits and classical optimization to approximat
 
 ## Quantum Chemistry Basics
 The electronic structure problem is defined by the Schrödinger equation:
+
 $$
 \hat{H}|\Psi\rangle = E|\Psi\rangle
 $$
@@ -29,7 +30,7 @@ Under the Born–Oppenheimer approximation, the Hamiltonian includes:
 - electron kinetic energy  
 - electron–nuclear attraction  
 - electron–electron repulsion  
-- nuclear repulsion  
+- nuclear–nuclear repulsion 
 
 ---
 
