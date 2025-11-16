@@ -48,9 +48,9 @@ A parameterized circuit prepares the trial state, and measurements guide a class
 ## Hartree–Fock State
 The HF reference wavefunction is:
 
-\[
+$$
 |\Psi_{HF}\rangle = \prod_{i=0}^{N-1} a_i^\dagger |0\rangle
-\]
+$$
 
 Mapped to qubits, this becomes applying **X-gates** to the initially occupied orbitals.
 
@@ -59,9 +59,9 @@ Mapped to qubits, this becomes applying **X-gates** to the initially occupied or
 ## UCCSD Ansatz
 The UCCSD trial state is defined as:
 
-\[
+$$
 |\Psi\rangle = e^{(T - T^\dagger)} |\Psi_{HF}\rangle
-\]
+$$
 
 where \(T\) includes single and double excitations, mapped to qubit operators through standard fermion-to-qubit transformations.
 
