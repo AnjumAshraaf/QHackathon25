@@ -1,159 +1,80 @@
 # QHackathon25
 A VQE simulation of CO₂ for Big Quantum Hackathon using real molecular integrals, demonstrating how variational quantum algorithms can support early studies in carbon-capture chemistry and showcase practical quantum methods for climate-focused research.
 
-🌟 VQE for Quantum Chemistry
+# 🌟 VQE for Quantum Chemistry
 
-A simple and structured demonstration of using the Variational Quantum Eigensolver (VQE) to estimate molecular ground-state energies using Hartree–Fock initialization and the UCCSD ansatz.
-This project highlights how hybrid quantum–classical methods can simulate small molecules efficiently.
+A minimal demonstration of using the **Variational Quantum Eigensolver (VQE)** to estimate molecular ground-state energies using **Hartree–Fock (HF)** initialization and the **UCCSD** ansatz.  
+This project showcases how hybrid quantum-classical methods can simulate small molecules effectively.
 
-📘 Overview
+---
 
-Intro to quantum chemistry
+## 📘 Overview
+- Introduction to quantum chemistry  
+- VQE formulation  
+- HF initial-state construction  
+- UCCSD ansatz  
+- Example simulation (H₂)  
 
-VQE formulation
+VQE uses parameterized quantum circuits and classical optimization to approximate the ground-state energy of a molecular Hamiltonian.
 
-HF initial-state preparation
+---
 
-UCCSD ansatz
+## 🔬 Quantum Chemistry Basics
+The electronic structure problem is defined by the Schrödinger equation:
 
-Example simulation (H₂)
+\[
+\hat{H}|\Psi\rangle = E|\Psi\rangle
+\]
 
-VQE leverages the variational principle to approximate the ground-state energy using parameterized circuits optimized by a classical optimizer.
+Under the Born–Oppenheimer approximation, the Hamiltonian includes:
+- electron kinetic energy  
+- electron–nuclear attraction  
+- electron–electron repulsion  
+- nuclear repulsion  
 
-🔬 Quantum Chemistry
+---
 
-The molecular wavefunction satisfies:
+## ⚡ VQE Method
+VQE minimizes the expectation value:
 
-𝐻
-^
-∣
-Ψ
-⟩
-=
-𝐸
-∣
-Ψ
-⟩
-H
-^
-∣Ψ⟩=E∣Ψ⟩
+\[
+E(\theta) = \langle \Psi(\theta) | \hat{H} | \Psi(\theta) \rangle
+\]
 
-Under the Born–Oppenheimer approximation, the Hamiltonian includes electron kinetic energy, electron–nuclear attraction, electron–electron repulsion, and nuclear repulsion.
+A parameterized circuit prepares the trial state, and measurements guide a classical optimizer to update parameters.
 
-⚡ VQE Method
+---
 
-VQE minimizes:
+## 🧱 Hartree–Fock State
+The HF reference wavefunction is:
 
-𝐸
-(
-𝜃
-)
-=
-⟨
-Ψ
-(
-𝜃
-)
-∣
-𝐻
-^
-∣
-Ψ
-(
-𝜃
-)
-⟩
-E(θ)=⟨Ψ(θ)∣
-H
-^
-∣Ψ(θ)⟩
+\[
+|\Psi_{HF}\rangle = \prod_{i=0}^{N-1} a_i^\dagger |0\rangle
+\]
 
-A parameterized circuit prepares the trial state, and measurement results guide classical optimization.
+Mapped to qubits, this becomes applying **X-gates** to the initially occupied orbitals.
 
-🧱 Hartree–Fock State
+---
 
-The HF initial state:
+## 🔗 UCCSD Ansatz
+The UCCSD trial state is defined as:
 
-∣
-Ψ
-𝐻
-𝐹
-⟩
-=
-∏
-𝑖
-=
-0
-𝑁
-−
-1
-𝑎
-𝑖
-†
-∣
-0
-⟩
-∣Ψ
-HF
-	​
+\[
+|\Psi\rangle = e^{(T - T^\dagger)} |\Psi_{HF}\rangle
+\]
 
-⟩=
-i=0
-∏
-N−1
-	​
+where \(T\) includes single and double excitations, mapped to qubit operators through standard fermion-to-qubit transformations.
 
-a
-i
-†
-	​
+---
 
-∣0⟩
+## 🧪 Example: H₂ Simulation
+The notebook demonstrates:
+- Building the molecular Hamiltonian  
+- Preparing the HF state  
+- Constructing UCCSD excitation operators  
+- Running VQE optimization  
+- Plotting energy convergence  
 
-In qubit form, this corresponds to applying X gates to occupied orbitals.
+---
 
-🔗 UCCSD Ansatz
 
-The UCCSD trial state:
-
-∣
-Ψ
-⟩
-=
-𝑒
-(
-𝑇
-−
-𝑇
-†
-)
-∣
-Ψ
-𝐻
-𝐹
-⟩
-∣Ψ⟩=e
-(T−T
-†
-)
-∣Ψ
-HF
-	​
-
-⟩
-
-Includes single and double excitations, mapped to qubits through fermion-to-qubit transformations.
-
-🧪 Example: H₂
-
-The notebook walks through:
-
-Building the molecular Hamiltonian
-
-Preparing HF reference
-
-Constructing UCCSD operators
-
-Running VQE optimization
-
-Plotting convergence
