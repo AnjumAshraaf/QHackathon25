@@ -37,9 +37,9 @@ Under the Born–Oppenheimer approximation, the Hamiltonian includes:
 ## VQE Method
 VQE minimizes the expectation value:
 
-\[
+$$
 E(\theta) = \langle \Psi(\theta) | \hat{H} | \Psi(\theta) \rangle
-\]
+$$
 
 A parameterized circuit prepares the trial state, and measurements guide a classical optimizer to update parameters.
 
