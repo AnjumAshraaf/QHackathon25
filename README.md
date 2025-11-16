@@ -3,7 +3,7 @@ A VQE simulation of CO₂ for Big Quantum Hackathon using real molecular integra
 
 # VQE for Quantum Chemistry
 
-A minimal demonstration of using the **Variational Quantum Eigensolver (VQE)** to estimate molecular ground-state energies using **Hartree–Fock (HF)** initialization and the **UCCSD** ansatz.  
+A demonstration of using the **Variational Quantum Eigensolver (VQE)** to estimate molecular ground-state energies using **Hartree–Fock (HF)** initialization and the **UCCSD** ansatz.  
 This project showcases how hybrid quantum-classical methods can simulate small molecules effectively.
 
 ---
